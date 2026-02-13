@@ -722,6 +722,196 @@ section + section { border-top: 1px solid var(--gray-200); }
   .sem-grid { grid-template-columns: 1fr 1fr; }
   .hero-meta { flex-direction: column; gap: var(--sp-3); }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE APP SECTIONS
+   ═══════════════════════════════════════════════════════════ */
+.mobile-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: .58rem;
+  font-weight: 600;
+  color: var(--green-600);
+  background: var(--green-50);
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.phone-frame {
+  width: 320px;
+  min-height: 580px;
+  border-radius: 32px;
+  border: 3px solid var(--gray-300);
+  overflow: hidden;
+  background: var(--gray-50);
+  box-shadow: var(--sh-lg);
+  position: relative;
+  margin: 0 auto;
+}
+.phone-status-bar {
+  height: 44px;
+  background: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 4px;
+  font-family: var(--font-mono);
+  font-size: .65rem;
+  color: var(--gray-800);
+  font-weight: 600;
+}
+.phone-nav-bar {
+  height: 48px;
+  background: white;
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  position: relative;
+}
+.phone-nav-back {
+  position: absolute;
+  left: 12px;
+  color: var(--blue-500);
+  font-size: .8rem;
+  font-weight: 600;
+}
+.phone-content {
+  padding: 16px;
+  overflow-y: auto;
+  min-height: 380px;
+}
+.phone-tab-bar {
+  height: 56px;
+  background: white;
+  border-top: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-display);
+  font-size: .55rem;
+  font-weight: 600;
+  color: var(--gray-400);
+}
+.tab-item.active { color: var(--blue-500); }
+.tab-item .tab-icon { font-size: 1.2rem; }
+.tab-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+  top: -12px;
+}
+.tab-book-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--green-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 12px rgba(140,200,60,.4);
+}
+.tab-book-label {
+  font-family: var(--font-display);
+  font-size: .55rem;
+  font-weight: 600;
+  color: var(--green-500);
+}
+
+.phone-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+@media (max-width: 768px) {
+  .phone-grid { grid-template-columns: 1fr; }
+}
+.phone-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--sp-5);
+}
+@media (max-width: 1024px) {
+  .phone-grid-3 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .phone-grid-3 { grid-template-columns: 1fr; }
+}
+
+/* Mini cards inside phone */
+.m-card {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: .72rem;
+}
+.m-earnings {
+  background: linear-gradient(135deg, var(--green-400), #5C8D27);
+  border-radius: 12px;
+  padding: 14px;
+  color: white;
+  margin-bottom: 12px;
+}
+.m-rate {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  flex: 1;
+}
+
+/* Timeline */
+.tl { display: flex; flex-direction: column; gap: 0; }
+.tl-step { display: flex; align-items: flex-start; gap: 10px; }
+.tl-track { display: flex; flex-direction: column; align-items: center; }
+.tl-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+  margin-top: 3px;
+}
+.tl-dot.done { background: var(--success); }
+.tl-dot.current { background: var(--blue-500); box-shadow: 0 0 0 3px rgba(40,160,200,.25); }
+.tl-dot.future { background: white; border: 2px solid var(--gray-300); }
+.tl-line { width: 2px; height: 24px; margin: 2px 0; }
+.tl-line.done { background: var(--success); }
+.tl-line.pending { background: var(--gray-200); }
+.tl-text { padding-bottom: 12px; }
+.tl-label { font-family: var(--font-display); font-size: .72rem; font-weight: 600; }
+.tl-time { font-size: .62rem; color: var(--gray-400); }
+
+/* Notification card */
+.notif-card {
+  display: flex;
+  gap: 10px;
+  padding: var(--sp-4);
+  background: var(--gray-900);
+  border-radius: var(--r-lg);
+  color: white;
+  font-size: .8rem;
+  align-items: flex-start;
+}
+.notif-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+.notif-title { font-family: var(--font-display); font-weight: 700; font-size: .82rem; }
+.notif-body { font-size: .75rem; color: var(--gray-400); margin-top: 2px; }
 </style>
 </head>
 <body>
@@ -750,6 +940,14 @@ section + section { border-top: 1px solid var(--gray-200); }
     <a href="#forms">Forms</a>
     <a href="#tables">Tables</a>
     <a href="#voice">Voice &amp; Tone</a>
+    <a href="#mobile-nav" style="color: var(--green-500);">Mobile Nav</a>
+    <a href="#mobile-layout" style="color: var(--green-500);">Mobile Layout</a>
+    <a href="#turbo-native" style="color: var(--green-500);">Turbo Native</a>
+    <a href="#mobile-flow" style="color: var(--green-500);">Booking Flow</a>
+    <a href="#mobile-dash" style="color: var(--green-500);">Mobile Dashboard</a>
+    <a href="#mobile-components" style="color: var(--green-500);">Mobile Components</a>
+    <a href="#notifications" style="color: var(--green-500);">Notifications</a>
+    <a href="#app-store" style="color: var(--green-500);">App Store</a>
     <a href="#tailwind">Tailwind</a>
   </div>
 </nav>
@@ -1329,10 +1527,579 @@ section + section { border-top: 1px solid var(--gray-200); }
 </div>
 </section>
 
-<!-- ═══════════ 10. TAILWIND ═══════════ -->
+
+<!-- ═══════════ 10. MOBILE NAV ═══════════ -->
+<section id="mobile-nav">
+<div class="wrap">
+  <p class="sec-label">10 — Mobile Navigation <span class="mobile-tag">Mobile App</span></p>
+  <h2 class="sec-title">Bottom Tab Bar</h2>
+  <p class="sec-desc">The mobile booking app uses a persistent 5-tab bottom bar. The centre "Book" tab is elevated with a green FAB to drive the primary action.</p>
+
+  <div class="phone-grid">
+    <div>
+      <h3 class="sub-title">Tab Bar Preview</h3>
+      <div class="phone-frame">
+        <div class="phone-status-bar">9:41</div>
+        <div class="phone-nav-bar">Home</div>
+        <div class="phone-content">
+          <div class="m-earnings">
+            <div style="font-size:.65rem;opacity:.8;font-family:var(--font-display);">Total Earnings</div>
+            <div style="font-family:var(--font-mono);font-size:1.6rem;font-weight:700;margin:4px 0;">₦47,350</div>
+            <div style="font-size:.6rem;opacity:.75;">12 pickups · Since Jan 2026</div>
+          </div>
+          <div style="font-family:var(--font-display);font-size:.78rem;font-weight:700;margin-bottom:8px;color:var(--gray-800);">Today's Rates</div>
+          <div style="display:flex;gap:8px;margin-bottom:14px;">
+            <div class="m-rate">
+              <div style="font-family:var(--font-mono);font-size:1.1rem;font-weight:700;color:var(--blue-500);">₦350</div>
+              <div style="font-size:.6rem;font-weight:600;color:var(--gray-600);font-family:var(--font-display);">Plastics</div>
+              <div style="font-size:.52rem;color:var(--gray-400);">per kg</div>
+            </div>
+            <div class="m-rate">
+              <div style="font-family:var(--font-mono);font-size:1.1rem;font-weight:700;color:var(--green-500);">₦680</div>
+              <div style="font-size:.6rem;font-weight:600;color:var(--gray-600);font-family:var(--font-display);">Aluminium</div>
+              <div style="font-size:.52rem;color:var(--gray-400);">per kg</div>
+            </div>
+          </div>
+          <div style="font-family:var(--font-display);font-size:.78rem;font-weight:700;margin-bottom:8px;color:var(--gray-800);">Recent Bookings</div>
+          <div class="m-card" style="margin-bottom:8px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+              <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--blue-500);">GEV-20260215-003</span>
+              <span class="badge badge-success" style="font-size:.52rem;padding:2px 6px;"><span class="badge-dot" style="width:4px;height:4px;"></span>Completed</span>
+            </div>
+            <div style="font-size:.68rem;color:var(--gray-700);">Plastics · 12.5 kg</div>
+            <div style="font-family:var(--font-mono);font-size:.72rem;font-weight:600;color:var(--green-500);margin-top:4px;">₦4,375 paid</div>
+          </div>
+          <div class="m-card">
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+              <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--blue-500);">GEV-20260215-004</span>
+              <span class="badge badge-info" style="font-size:.52rem;padding:2px 6px;"><span class="badge-dot" style="width:4px;height:4px;"></span>Confirmed</span>
+            </div>
+            <div style="font-size:.68rem;color:var(--gray-700);">UBC · ~20 kg</div>
+            <div style="font-size:.6rem;color:var(--gray-400);margin-top:4px;">Pickup: 16 Feb 2026</div>
+          </div>
+        </div>
+        <div class="phone-tab-bar">
+          <div class="tab-item active"><span class="tab-icon">🏠</span>Home</div>
+          <div class="tab-item"><span class="tab-icon">📋</span>Bookings</div>
+          <div class="tab-book"><div class="tab-book-circle">＋</div><div class="tab-book-label">Book</div></div>
+          <div class="tab-item"><span class="tab-icon">💰</span>Earnings</div>
+          <div class="tab-item"><span class="tab-icon">👤</span>Profile</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="sub-title">Tab Bar Specification</h3>
+      <table class="tbl" style="margin-bottom: var(--sp-6);">
+        <thead><tr><th>Property</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Background</td><td>White</td></tr>
+          <tr><td>Border top</td><td style="font-family:var(--font-mono);font-size:.78rem;">1px solid gray-200</td></tr>
+          <tr><td>Shadow</td><td style="font-family:var(--font-mono);font-size:.72rem;">0 -1px 3px rgba(20,25,25,0.06)</td></tr>
+          <tr><td>Height</td><td style="font-family:var(--font-mono);font-size:.78rem;">56px + safe area bottom</td></tr>
+          <tr><td>Active colour</td><td><span style="color:var(--blue-500);font-weight:600;">blue-500</span> #28A0C8</td></tr>
+          <tr><td>Inactive colour</td><td><span style="color:var(--gray-400);">gray-400</span> #8B969C</td></tr>
+          <tr><td>Icon size</td><td style="font-family:var(--font-mono);font-size:.78rem;">24px</td></tr>
+          <tr><td>Label font</td><td style="font-family:var(--font-mono);font-size:.78rem;">font-display, 10px, 600</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="sub-title">Tab Destinations</h3>
+      <table class="tbl">
+        <thead><tr><th>Tab</th><th>Icon</th><th>Path</th></tr></thead>
+        <tbody>
+          <tr><td>Home</td><td style="font-family:var(--font-mono);font-size:.78rem;">home</td><td style="font-family:var(--font-mono);font-size:.78rem;">/</td></tr>
+          <tr><td>Bookings</td><td style="font-family:var(--font-mono);font-size:.78rem;">clipboard-list</td><td style="font-family:var(--font-mono);font-size:.78rem;">/bookings</td></tr>
+          <tr><td style="color:var(--green-500);font-weight:600;">Book (centre)</td><td style="font-family:var(--font-mono);font-size:.78rem;">plus-circle</td><td style="font-family:var(--font-mono);font-size:.78rem;">/bookings/new</td></tr>
+          <tr><td>Earnings</td><td style="font-family:var(--font-mono);font-size:.78rem;">banknote</td><td style="font-family:var(--font-mono);font-size:.78rem;">/earnings</td></tr>
+          <tr><td>Profile</td><td style="font-family:var(--font-mono);font-size:.78rem;">user</td><td style="font-family:var(--font-mono);font-size:.78rem;">/profile</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 11. MOBILE LAYOUT ═══════════ -->
+<section id="mobile-layout">
+<div class="wrap">
+  <p class="sec-label">11 — Mobile Page Layout <span class="mobile-tag">Mobile App</span></p>
+  <h2 class="sec-title">Screen Structure</h2>
+  <p class="sec-desc">Every mobile screen follows a consistent structure: OS status bar, native nav bar, scrollable content area, and persistent tab bar with safe area insets.</p>
+
+  <div class="phone-grid">
+    <div>
+      <h3 class="sub-title">Screen Anatomy</h3>
+      <div style="background:white;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-5);font-family:var(--font-mono);font-size:.72rem;">
+        <div style="background:var(--gray-200);padding:8px;text-align:center;border-radius:6px;margin-bottom:4px;color:var(--gray-600);">Safe Area Top (OS status bar)</div>
+        <div style="background:var(--blue-50);padding:12px;text-align:center;border-radius:6px;margin-bottom:4px;color:var(--blue-700);">Native Nav Bar — 56px<br><span style="font-size:.6rem;">← Back &nbsp;&nbsp;&nbsp; Title &nbsp;&nbsp;&nbsp; [⋯]</span></div>
+        <div style="background:var(--gray-50);padding:40px 12px;text-align:center;border-radius:6px;margin-bottom:4px;color:var(--gray-500);border:1px dashed var(--gray-300);">Scrollable Content<br>(Turbo Frame)<br><br>px-4 horizontal padding<br>pb-[100px] bottom clearance</div>
+        <div style="background:var(--green-50);padding:12px;text-align:center;border-radius:6px;margin-bottom:4px;color:var(--green-700);">Tab Bar — 56px + safe area</div>
+        <div style="background:var(--gray-200);padding:8px;text-align:center;border-radius:6px;color:var(--gray-600);">Safe Area Bottom (home indicator)</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="sub-title">Key Screens</h3>
+      <table class="tbl">
+        <thead><tr><th>Screen</th><th>Background</th><th>Fixed Elements</th></tr></thead>
+        <tbody>
+          <tr><td>Home</td><td style="font-family:var(--font-mono);font-size:.78rem;">gray-50</td><td>None</td></tr>
+          <tr><td>New Booking</td><td style="font-family:var(--font-mono);font-size:.78rem;">white</td><td>Sticky bottom CTA</td></tr>
+          <tr><td>Booking Detail</td><td style="font-family:var(--font-mono);font-size:.78rem;">white</td><td>None</td></tr>
+          <tr><td>Bookings List</td><td style="font-family:var(--font-mono);font-size:.78rem;">gray-50</td><td>Pull to refresh</td></tr>
+          <tr><td>Earnings</td><td style="font-family:var(--font-mono);font-size:.78rem;">gray-50</td><td>Pull to refresh</td></tr>
+          <tr><td>Profile</td><td style="font-family:var(--font-mono);font-size:.78rem;">gray-50</td><td>None</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="sub-title" style="margin-top:var(--sp-6);">Safe Area CSS</h3>
+      <div class="code"><code><span class="cm">/* Safe area utilities */</span>
+.<span class="k">safe-area-top</span> {{
+  padding-top: <span class="v">env(safe-area-inset-top, 0px)</span>;
+}}
+.<span class="k">safe-area-bottom</span> {{
+  padding-bottom: <span class="v">env(safe-area-inset-bottom, 0px)</span>;
+}}</code></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 12. TURBO NATIVE ═══════════ -->
+<section id="turbo-native">
+<div class="wrap">
+  <p class="sec-label">12 — Turbo Native Architecture <span class="mobile-tag">Mobile App</span></p>
+  <h2 class="sec-title">Single Codebase, Three Surfaces</h2>
+  <p class="sec-desc">Rails 8 serves HTML to a native iOS/Android shell via Turbo Native. Same controllers, same models — views adapt using request detection and responsive CSS.</p>
+
+  <div class="phone-grid">
+    <div>
+      <h3 class="sub-title">Request Detection</h3>
+      <div class="code"><code><span class="cm"># app/controllers/application_controller.rb</span>
+<span class="k">class</span> ApplicationController
+  <span class="k">helper_method</span> <span class="v">:turbo_native_app?</span>
+
+  <span class="k">def</span> turbo_native_app?
+    request.user_agent&.match?(<span class="v">/Turbo Native/</span>)
+  <span class="k">end</span>
+
+  <span class="k">before_action</span> <span class="v">:set_variant</span>
+  <span class="k">def</span> set_variant
+    request.variant = <span class="v">:phone</span> <span class="k">if</span> turbo_native_app?
+  <span class="k">end</span>
+<span class="k">end</span></code></div>
+
+      <h3 class="sub-title">Platform CSS Classes</h3>
+      <div class="code"><code><span class="cm">/* Show/hide by platform */</span>
+.<span class="k">turbo-native</span> .<span class="k">web-only</span> {{
+  display: <span class="v">none !important</span>;
+}}
+body:not(.<span class="k">turbo-native</span>) .<span class="k">native-only</span> {{
+  display: <span class="v">none !important</span>;
+}}</code></div>
+    </div>
+
+    <div>
+      <h3 class="sub-title">View Strategy</h3>
+      <table class="tbl" style="margin-bottom:var(--sp-6);">
+        <thead><tr><th>Approach</th><th>When</th></tr></thead>
+        <tbody>
+          <tr><td>Same view + Tailwind</td><td>Most screens — CSS-only changes</td></tr>
+          <tr><td style="font-family:var(--font-mono);font-size:.78rem;">+phone.erb variant</td><td>Different structure (home, nav)</td></tr>
+          <tr><td>Shared partials</td><td>Forms, cards, badges — always</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="sub-title">Native Shell Handles</h3>
+      <table class="tbl">
+        <thead><tr><th>Feature</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Nav bar + transitions</td><td style="color:var(--green-600);font-weight:600;">Native</td></tr>
+          <tr><td>Tab bar</td><td style="color:var(--green-600);font-weight:600;">Native</td></tr>
+          <tr><td>Push notifications</td><td style="color:var(--green-600);font-weight:600;">Native</td></tr>
+          <tr><td>Pull to refresh</td><td style="color:var(--green-600);font-weight:600;">Native</td></tr>
+          <tr><td>Splash screen</td><td style="color:var(--green-600);font-weight:600;">Native</td></tr>
+          <tr><td>Camera / file picker</td><td style="color:var(--green-600);font-weight:600;">Native</td></tr>
+          <tr><td>Page title</td><td style="color:var(--blue-600);font-weight:600;">Rails &lt;title&gt;</td></tr>
+          <tr><td>Screen content</td><td style="color:var(--blue-600);font-weight:600;">Rails views</td></tr>
+          <tr><td>Notification content</td><td style="color:var(--blue-600);font-weight:600;">Rails API</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 13. MOBILE BOOKING FLOW ═══════════ -->
+<section id="mobile-flow">
+<div class="wrap">
+  <p class="sec-label">13 — Mobile Booking Flow <span class="mobile-tag">Mobile App</span></p>
+  <h2 class="sec-title">Book → Weigh → Get Paid</h2>
+  <p class="sec-desc">The booking flow is optimised for speed — only 3 required fields. Sticky bottom CTA, native keyboard types, and a clear confirmation with booking reference.</p>
+
+  <div class="phone-grid">
+    <div>
+      <h3 class="sub-title">New Booking Screen</h3>
+      <div class="phone-frame">
+        <div class="phone-status-bar">9:41</div>
+        <div class="phone-nav-bar"><span class="phone-nav-back">← Back</span> Book Pickup</div>
+        <div class="phone-content" style="background:white;">
+          <div style="font-family:var(--font-display);font-size:.62rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Full Name *</div>
+          <div style="border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 10px;font-size:.72rem;margin-bottom:12px;color:var(--gray-800);">Animashaun Olushola</div>
+
+          <div style="font-family:var(--font-display);font-size:.62rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">WhatsApp Number *</div>
+          <div style="border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 10px;font-size:.72rem;margin-bottom:4px;color:var(--gray-800);">08036205243</div>
+          <div style="font-size:.55rem;color:var(--gray-400);margin-bottom:12px;">We'll send confirmations via WhatsApp</div>
+
+          <div style="font-family:var(--font-display);font-size:.62rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Pickup Address *</div>
+          <div style="border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 10px;font-size:.72rem;margin-bottom:12px;color:var(--gray-400);">e.g., 15 Akpakpava Road, Benin City</div>
+
+          <div style="font-family:var(--font-display);font-size:.62rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Waste Type</div>
+          <div style="border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 10px;font-size:.72rem;margin-bottom:12px;color:var(--gray-800);display:flex;justify-content:space-between;">Plastics <span style="color:var(--gray-400);">▼</span></div>
+
+          <div style="font-family:var(--font-display);font-size:.62rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Est. Weight (kg)</div>
+          <div style="border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 10px;font-size:.72rem;margin-bottom:12px;color:var(--gray-400);">e.g., 25</div>
+        </div>
+        <div style="padding:12px 16px;background:white;border-top:1px solid var(--gray-200);">
+          <div style="background:var(--green-400);color:white;text-align:center;padding:12px;border-radius:10px;font-family:var(--font-display);font-weight:600;font-size:.82rem;">Schedule Free Pickup →</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="sub-title">Confirmation Screen</h3>
+      <div class="phone-frame">
+        <div class="phone-status-bar">9:41</div>
+        <div class="phone-nav-bar">Booking Submitted</div>
+        <div class="phone-content" style="background:white;text-align:center;padding-top:40px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--success-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.4rem;color:var(--success);">✓</div>
+          <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:var(--gray-900);margin-bottom:10px;">Booking Submitted!</div>
+          <div style="background:var(--gray-50);border-radius:8px;padding:10px;margin-bottom:14px;">
+            <div style="font-family:var(--font-mono);font-size:1rem;font-weight:600;color:var(--blue-500);">GEV-20260215-003</div>
+          </div>
+          <div style="font-size:.78rem;color:var(--gray-500);margin-bottom:28px;line-height:1.6;">We'll confirm your pickup within<br>30 minutes via WhatsApp.</div>
+          <div style="background:var(--blue-500);color:white;text-align:center;padding:12px;border-radius:10px;font-family:var(--font-display);font-weight:600;font-size:.82rem;margin-bottom:10px;">View Booking →</div>
+          <div style="background:white;color:var(--blue-500);text-align:center;padding:12px;border-radius:10px;font-family:var(--font-display);font-weight:600;font-size:.82rem;border:1.5px solid var(--blue-300);">Book Another</div>
+        </div>
+        <div class="phone-tab-bar">
+          <div class="tab-item"><span class="tab-icon">🏠</span>Home</div>
+          <div class="tab-item active"><span class="tab-icon">📋</span>Bookings</div>
+          <div class="tab-book"><div class="tab-book-circle">＋</div><div class="tab-book-label">Book</div></div>
+          <div class="tab-item"><span class="tab-icon">💰</span>Earnings</div>
+          <div class="tab-item"><span class="tab-icon">👤</span>Profile</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 14. MOBILE DASHBOARD ═══════════ -->
+<section id="mobile-dash">
+<div class="wrap">
+  <p class="sec-label">14 — Mobile Customer Dashboard <span class="mobile-tag">Mobile App</span></p>
+  <h2 class="sec-title">Customer Screens</h2>
+  <p class="sec-desc">The customer app centres around earnings visibility, live rates, and booking management. Earnings are always front and centre.</p>
+
+  <div class="phone-grid-3">
+    <div>
+      <h3 class="sub-title">Booking Detail</h3>
+      <div class="phone-frame" style="min-height:520px;">
+        <div class="phone-status-bar">9:41</div>
+        <div class="phone-nav-bar"><span class="phone-nav-back">← Back</span> Booking Detail</div>
+        <div class="phone-content" style="background:white;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+            <span style="font-family:var(--font-mono);font-size:.82rem;color:var(--blue-500);font-weight:500;">GEV-20260215-001</span>
+            <span class="badge badge-success" style="font-size:.58rem;padding:3px 8px;"><span class="badge-dot" style="width:5px;height:5px;"></span>Completed</span>
+          </div>
+
+          <div style="font-family:var(--font-display);font-size:.72rem;font-weight:700;color:var(--gray-800);margin-bottom:10px;">Status</div>
+          <div class="tl">
+            <div class="tl-step"><div class="tl-track"><div class="tl-dot done"></div><div class="tl-line done"></div></div><div class="tl-text"><div class="tl-label" style="color:var(--gray-800);">Submitted</div><div class="tl-time">15 Feb, 2:30 PM</div></div></div>
+            <div class="tl-step"><div class="tl-track"><div class="tl-dot done"></div><div class="tl-line done"></div></div><div class="tl-text"><div class="tl-label" style="color:var(--gray-800);">Confirmed</div><div class="tl-time">15 Feb, 2:45 PM</div></div></div>
+            <div class="tl-step"><div class="tl-track"><div class="tl-dot done"></div><div class="tl-line done"></div></div><div class="tl-text"><div class="tl-label" style="color:var(--gray-800);">Driver Assigned</div><div class="tl-time">15 Feb, 3:00 PM</div></div></div>
+            <div class="tl-step"><div class="tl-track"><div class="tl-dot done"></div><div class="tl-line done"></div></div><div class="tl-text"><div class="tl-label" style="color:var(--gray-800);">Pickup Complete</div><div class="tl-time">16 Feb, 10:15 AM</div></div></div>
+            <div class="tl-step"><div class="tl-track"><div class="tl-dot done"></div></div><div class="tl-text"><div class="tl-label" style="color:var(--gray-800);">Payment Sent</div><div class="tl-time">16 Feb, 10:15 AM</div></div></div>
+          </div>
+
+          <div style="border-top:1px solid var(--gray-100);margin:12px 0;"></div>
+          <div style="font-family:var(--font-display);font-size:.72rem;font-weight:700;color:var(--gray-800);margin-bottom:8px;">Payment</div>
+          <div style="display:flex;justify-content:space-between;font-size:.72rem;margin-bottom:4px;"><span style="color:var(--gray-500);">Rate</span><span style="font-family:var(--font-mono);">₦350/kg</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.72rem;margin-bottom:4px;"><span style="color:var(--gray-500);">Actual Weight</span><span style="font-family:var(--font-mono);">12.5 kg</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-top:8px;padding-top:8px;border-top:1px solid var(--gray-100);"><span style="font-family:var(--font-display);font-weight:700;">Amount</span><span style="font-family:var(--font-mono);font-weight:700;color:var(--green-500);font-size:.9rem;">₦4,375</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="sub-title">Earnings Screen</h3>
+      <div class="phone-frame" style="min-height:520px;">
+        <div class="phone-status-bar">9:41</div>
+        <div class="phone-nav-bar">Earnings</div>
+        <div class="phone-content">
+          <div class="m-earnings" style="margin-bottom:10px;">
+            <div style="font-size:.62rem;opacity:.8;font-family:var(--font-display);">Total Earned</div>
+            <div style="font-family:var(--font-mono);font-size:1.5rem;font-weight:700;margin:4px 0;">₦47,350</div>
+            <div style="display:flex;justify-content:space-between;font-size:.55rem;opacity:.75;margin-top:6px;">
+              <span>This month: ₦12,400</span><span>Last month: ₦18,200</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:6px;margin-bottom:12px;">
+            <div style="background:var(--blue-500);color:white;padding:5px 12px;border-radius:99px;font-family:var(--font-display);font-size:.6rem;font-weight:600;">All</div>
+            <div style="background:var(--gray-100);color:var(--gray-600);padding:5px 12px;border-radius:99px;font-family:var(--font-display);font-size:.6rem;font-weight:600;">Plastics</div>
+            <div style="background:var(--gray-100);color:var(--gray-600);padding:5px 12px;border-radius:99px;font-family:var(--font-display);font-size:.6rem;font-weight:600;">UBC</div>
+          </div>
+          <div style="font-family:var(--font-display);font-size:.68rem;font-weight:700;color:var(--gray-500);margin-bottom:8px;">February 2026</div>
+          <div class="m-card" style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;">
+            <div><div style="font-size:.68rem;color:var(--gray-800);">15 Feb · Plastics</div><div style="font-size:.58rem;color:var(--gray-400);">12.5 kg</div></div>
+            <div style="font-family:var(--font-mono);font-weight:600;color:var(--green-500);font-size:.78rem;">+₦4,375</div>
+          </div>
+          <div class="m-card" style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;">
+            <div><div style="font-size:.68rem;color:var(--gray-800);">12 Feb · UBC</div><div style="font-size:.58rem;color:var(--gray-400);">8.0 kg</div></div>
+            <div style="font-family:var(--font-mono);font-weight:600;color:var(--green-500);font-size:.78rem;">+₦5,440</div>
+          </div>
+          <div class="m-card" style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;">
+            <div><div style="font-size:.68rem;color:var(--gray-800);">8 Feb · Plastics</div><div style="font-size:.58rem;color:var(--gray-400);">6.2 kg</div></div>
+            <div style="font-family:var(--font-mono);font-weight:600;color:var(--green-500);font-size:.78rem;">+₦2,170</div>
+          </div>
+        </div>
+        <div class="phone-tab-bar">
+          <div class="tab-item"><span class="tab-icon">🏠</span>Home</div>
+          <div class="tab-item"><span class="tab-icon">📋</span>Bookings</div>
+          <div class="tab-book"><div class="tab-book-circle">＋</div><div class="tab-book-label">Book</div></div>
+          <div class="tab-item active"><span class="tab-icon">💰</span>Earnings</div>
+          <div class="tab-item"><span class="tab-icon">👤</span>Profile</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="sub-title">Profile Screen</h3>
+      <div class="phone-frame" style="min-height:520px;">
+        <div class="phone-status-bar">9:41</div>
+        <div class="phone-nav-bar">Profile</div>
+        <div class="phone-content" style="text-align:center;">
+          <div style="width:52px;height:52px;border-radius:50%;background:var(--blue-500);color:white;display:flex;align-items:center;justify-content:center;margin:8px auto 8px;font-family:var(--font-display);font-weight:700;font-size:.9rem;">AO</div>
+          <div style="font-family:var(--font-display);font-weight:700;font-size:.9rem;color:var(--gray-900);">Animashaun Olushola</div>
+          <div style="font-size:.68rem;color:var(--gray-400);margin-bottom:18px;">08036205243</div>
+
+          <div style="text-align:left;background:white;border:1px solid var(--gray-200);border-radius:12px;overflow:hidden;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid var(--gray-100);font-size:.75rem;">
+              <span>📝 Edit Profile</span><span style="color:var(--gray-400);">›</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid var(--gray-100);font-size:.75rem;">
+              <span>📍 Saved Addresses</span><span style="color:var(--gray-400);">›</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid var(--gray-100);font-size:.75rem;">
+              <span>🔔 Notifications</span><span style="color:var(--gray-400);">›</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid var(--gray-100);font-size:.75rem;">
+              <span>💬 Chat with us (WhatsApp)</span><span style="color:var(--gray-400);">›</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;font-size:.75rem;">
+              <span>ℹ️ About GEV</span><span style="color:var(--gray-400);">›</span>
+            </div>
+          </div>
+
+          <div style="margin-top:18px;color:var(--error);font-family:var(--font-display);font-weight:600;font-size:.82rem;">Log Out</div>
+          <div style="margin-top:12px;font-family:var(--font-mono);font-size:.58rem;color:var(--gray-400);">App v1.0.0</div>
+        </div>
+        <div class="phone-tab-bar">
+          <div class="tab-item"><span class="tab-icon">🏠</span>Home</div>
+          <div class="tab-item"><span class="tab-icon">📋</span>Bookings</div>
+          <div class="tab-book"><div class="tab-book-circle">＋</div><div class="tab-book-label">Book</div></div>
+          <div class="tab-item"><span class="tab-icon">💰</span>Earnings</div>
+          <div class="tab-item active"><span class="tab-icon">👤</span>Profile</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 15. MOBILE COMPONENTS ═══════════ -->
+<section id="mobile-components">
+<div class="wrap">
+  <p class="sec-label">15 — Mobile Components <span class="mobile-tag">Mobile App</span></p>
+  <h2 class="sec-title">Mobile-Specific Components</h2>
+  <p class="sec-desc">Components designed specifically for the mobile experience — status timelines, filter pills, bottom sheets, skeletons, and empty states.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="comp-demo" style="padding:var(--sp-7);flex-direction:column;align-items:flex-start;">
+        <div class="tl">
+          <div class="tl-step"><div class="tl-track"><div class="tl-dot done"></div><div class="tl-line done"></div></div><div class="tl-text"><div class="tl-label" style="color:var(--gray-800);">Submitted</div><div class="tl-time">15 Feb, 2:30 PM</div></div></div>
+          <div class="tl-step"><div class="tl-track"><div class="tl-dot done"></div><div class="tl-line done"></div></div><div class="tl-text"><div class="tl-label" style="color:var(--gray-800);">Confirmed</div><div class="tl-time">15 Feb, 2:45 PM</div></div></div>
+          <div class="tl-step"><div class="tl-track"><div class="tl-dot current"></div><div class="tl-line pending"></div></div><div class="tl-text"><div class="tl-label" style="color:var(--gray-800);">Driver Assigned</div><div class="tl-time">In progress</div></div></div>
+          <div class="tl-step"><div class="tl-track"><div class="tl-dot future"></div><div class="tl-line pending"></div></div><div class="tl-text"><div class="tl-label" style="color:var(--gray-400);">Pickup Complete</div></div></div>
+          <div class="tl-step"><div class="tl-track"><div class="tl-dot future"></div></div><div class="tl-text"><div class="tl-label" style="color:var(--gray-400);">Payment Sent</div></div></div>
+        </div>
+      </div>
+      <div class="comp-info"><div class="comp-name">Status Timeline</div><div class="comp-desc">Vertical progress tracker for booking lifecycle. Three states: done (green), current (blue + pulse), future (hollow).</div></div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-demo" style="flex-direction:column;gap:var(--sp-5);">
+        <div style="display:flex;gap:8px;">
+          <div style="background:var(--blue-500);color:white;padding:6px 16px;border-radius:99px;font-family:var(--font-display);font-size:.78rem;font-weight:600;">All</div>
+          <div style="background:var(--gray-100);color:var(--gray-600);padding:6px 16px;border-radius:99px;font-family:var(--font-display);font-size:.78rem;font-weight:600;">Plastics</div>
+          <div style="background:var(--gray-100);color:var(--gray-600);padding:6px 16px;border-radius:99px;font-family:var(--font-display);font-size:.78rem;font-weight:600;">Aluminium Cans</div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <div style="background:var(--gray-100);color:var(--gray-600);padding:6px 16px;border-radius:99px;font-family:var(--font-display);font-size:.78rem;font-weight:600;">Pending</div>
+          <div style="background:var(--blue-500);color:white;padding:6px 16px;border-radius:99px;font-family:var(--font-display);font-size:.78rem;font-weight:600;">Completed</div>
+          <div style="background:var(--gray-100);color:var(--gray-600);padding:6px 16px;border-radius:99px;font-family:var(--font-display);font-size:.78rem;font-weight:600;">Cancelled</div>
+        </div>
+      </div>
+      <div class="comp-info"><div class="comp-name">Filter Pills</div><div class="comp-desc">Horizontal scrollable chips for filtering lists. Active: blue-500 with white text. Inactive: gray-100 with gray-600 text.</div></div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-demo" style="flex-direction:column;gap:var(--sp-4);padding:var(--sp-7);">
+        <div class="notif-card">
+          <span class="notif-icon" style="color:var(--success);">✓</span>
+          <div><div class="notif-title">Pickup Confirmed ✓</div><div class="notif-body">Your pickup for 16 Feb has been confirmed. Ref: GEV-20260215-003</div></div>
+        </div>
+        <div class="notif-card">
+          <span class="notif-icon" style="color:var(--green-400);">💰</span>
+          <div><div class="notif-title">You Earned ₦4,375!</div><div class="notif-body">12.5kg of Plastics collected. Payment sent.</div></div>
+        </div>
+        <div class="notif-card">
+          <span class="notif-icon" style="color:var(--blue-400);">📍</span>
+          <div><div class="notif-title">Driver On The Way</div><div class="notif-body">Your driver is headed to 15 Akpakpava Road. ETA: 25 min</div></div>
+        </div>
+      </div>
+      <div class="comp-info"><div class="comp-name">Toast Notifications</div><div class="comp-desc">Slide-down toasts on dark background. Auto-dismiss after 3 seconds. Coloured icon by type. Max 2 lines.</div></div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-demo" style="flex-direction:column;gap:var(--sp-3);padding:var(--sp-7);">
+        <div style="display:flex;flex-direction:column;gap:var(--sp-2);">
+          <div class="animate-pulse" style="height:100px;background:var(--gray-200);border-radius:12px;"></div>
+          <div class="animate-pulse" style="height:16px;background:var(--gray-200);border-radius:4px;width:40%;"></div>
+          <div class="animate-pulse" style="height:64px;background:var(--gray-200);border-radius:10px;"></div>
+          <div class="animate-pulse" style="height:64px;background:var(--gray-200);border-radius:10px;"></div>
+        </div>
+      </div>
+      <div class="comp-info"><div class="comp-name">Skeleton Loading</div><div class="comp-desc">Shimmer placeholders matching target layout. Use animate-pulse on gray-200 backgrounds with matching border radius.</div></div>
+    </div>
+  </div>
+
+  <div style="height:var(--sp-5);"></div>
+
+  <div class="comp-full">
+    <div class="comp-demo" style="padding:var(--sp-9);background:white;">
+      <div style="text-align:center;max-width:280px;">
+        <div style="font-size:3rem;margin-bottom:var(--sp-4);">📦</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--gray-800);margin-bottom:var(--sp-2);">No bookings yet</div>
+        <div style="font-size:.88rem;color:var(--gray-500);margin-bottom:var(--sp-6);line-height:1.6;">Schedule your first pickup and start earning from your recyclables.</div>
+        <button class="btn btn-cta btn-lg" style="width:100%;">Schedule Pickup →</button>
+      </div>
+    </div>
+    <div class="comp-info"><div class="comp-name">Empty State</div><div class="comp-desc">Large icon + title + description + CTA. Used when lists have no data (bookings, earnings).</div></div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 16. PUSH NOTIFICATIONS ═══════════ -->
+<section id="notifications">
+<div class="wrap">
+  <p class="sec-label">16 — Push Notifications <span class="mobile-tag">Mobile App</span></p>
+  <h2 class="sec-title">Notification System</h2>
+  <p class="sec-desc">Push notifications keep customers informed about their bookings and create re-engagement opportunities when rates change.</p>
+
+  <table class="tbl" style="margin-bottom:var(--sp-8);">
+    <thead><tr><th>Event</th><th>Title</th><th>Body</th><th>Deep Link</th></tr></thead>
+    <tbody>
+      <tr><td>Booking confirmed</td><td style="font-weight:600;">Pickup Confirmed ✓</td><td>Your pickup for {date} confirmed. Ref: {ref}</td><td style="font-family:var(--font-mono);font-size:.72rem;">/bookings/{id}</td></tr>
+      <tr><td>Driver assigned</td><td style="font-weight:600;">Driver On The Way</td><td>Driver headed to {address}. ETA: {time}</td><td style="font-family:var(--font-mono);font-size:.72rem;">/bookings/{id}</td></tr>
+      <tr><td>Pickup completed</td><td style="font-weight:600;">You Earned ₦{amount}!</td><td>{weight}kg of {type} collected.</td><td style="font-family:var(--font-mono);font-size:.72rem;">/earnings</td></tr>
+      <tr><td>Rate change</td><td style="font-weight:600;">New Buy Rates</td><td>Plastics: ₦{rate}/kg. Sell today!</td><td style="font-family:var(--font-mono);font-size:.72rem;">/</td></tr>
+      <tr><td>Reminder</td><td style="font-weight:600;">Pickup Tomorrow</td><td>We're coming to {address} at {time}.</td><td style="font-family:var(--font-mono);font-size:.72rem;">/bookings/{id}</td></tr>
+    </tbody>
+  </table>
+
+  <div class="code"><code><span class="cm"># Server-side notification payload</span>
+{{
+  <span class="k">title</span>: <span class="v">"You Earned ₦4,375!"</span>,
+  <span class="k">body</span>: <span class="v">"12.5kg of Plastics collected."</span>,
+  <span class="k">data</span>: {{
+    <span class="k">url</span>: <span class="v">"/bookings/42"</span>,
+    <span class="k">type</span>: <span class="v">"booking_completed"</span>
+  }}
+}}</code></div>
+</div>
+</section>
+
+<!-- ═══════════ 17. APP STORE ═══════════ -->
+<section id="app-store">
+<div class="wrap">
+  <p class="sec-label">17 — App Store Presence <span class="mobile-tag">Mobile App</span></p>
+  <h2 class="sec-title">App Store Listing</h2>
+  <p class="sec-desc">How the app presents itself on the App Store (iOS) and Google Play (Android).</p>
+
+  <div class="phone-grid">
+    <div style="background:white;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-7);">
+      <div style="font-family:var(--font-display);font-weight:700;font-size:.9rem;margin-bottom:var(--sp-5);color:var(--gray-900);">Listing Details</div>
+      <table class="tbl">
+        <tbody>
+          <tr><td style="color:var(--gray-500);font-weight:500;">App Name</td><td style="font-weight:600;">Genius Eco Visionaries</td></tr>
+          <tr><td style="color:var(--gray-500);font-weight:500;">Subtitle</td><td>Turn Your Waste Into Cash</td></tr>
+          <tr><td style="color:var(--gray-500);font-weight:500;">Primary Category</td><td>Lifestyle</td></tr>
+          <tr><td style="color:var(--gray-500);font-weight:500;">Secondary</td><td>Business</td></tr>
+          <tr><td style="color:var(--gray-500);font-weight:500;">App Icon</td><td>Logo on <span style="font-family:var(--font-mono);font-size:.78rem;">#141919</span>, 18% padding</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="background:white;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-7);">
+      <div style="font-family:var(--font-display);font-weight:700;font-size:.9rem;margin-bottom:var(--sp-5);color:var(--gray-900);">Description</div>
+      <div style="font-size:.85rem;color:var(--gray-700);line-height:1.7;">
+        <strong>Book. Weigh. Get Paid.</strong><br><br>
+        Schedule a free pickup and we'll come to you — weigh your plastics or aluminium cans, and pay you at the current market rate.<br><br>
+        ✓ Free pickup — we come to your location<br>
+        ✓ Get paid for plastics and aluminium cans<br>
+        ✓ Track bookings and earnings<br>
+        ✓ Live market rates updated daily<br>
+        ✓ Serving Edo South, expanding across Edo State<br><br>
+        <em>Small changes, big impact.</em>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:var(--sp-5);">
+    <h3 class="sub-title">Screenshot Order (5 screens)</h3>
+    <div style="display:flex;gap:var(--sp-4);overflow-x:auto;padding-bottom:var(--sp-3);">
+      <div style="min-width:120px;text-align:center;">
+        <div style="height:80px;background:var(--blue-50);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:6px;">🏠</div>
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--gray-500);">1. Home + Rates</div>
+      </div>
+      <div style="min-width:120px;text-align:center;">
+        <div style="height:80px;background:var(--green-50);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:6px;">📝</div>
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--gray-500);">2. Booking Form</div>
+      </div>
+      <div style="min-width:120px;text-align:center;">
+        <div style="height:80px;background:var(--success-bg);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:6px;">✓</div>
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--gray-500);">3. Confirmation</div>
+      </div>
+      <div style="min-width:120px;text-align:center;">
+        <div style="height:80px;background:var(--green-50);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:6px;">💰</div>
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--gray-500);">4. Earnings</div>
+      </div>
+      <div style="min-width:120px;text-align:center;">
+        <div style="height:80px;background:var(--blue-50);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:6px;">📋</div>
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--gray-500);">5. Booking Detail</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 18. TAILWIND ═══════════ -->
 <section id="tailwind">
 <div class="wrap">
-  <p class="sec-label">10 — Implementation</p>
+  <p class="sec-label">18 — Implementation</p>
   <h2 class="sec-title">Tailwind CSS Config</h2>
   <p class="sec-desc">Copy into tailwind.config.js to make all design tokens available as Tailwind utility classes in the Rails app.</p>
 
